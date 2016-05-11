@@ -12,6 +12,8 @@ func main() {
 	port := flag.String("port", "8080", "Port")
 	dir := flag.String("static", "./", "Path to static files")
 
+	flag.Parse()
+
 	fs := http.FileServer(http.Dir(*dir))
 	http.Handle("/", fs)
 
